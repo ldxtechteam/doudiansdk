@@ -1,9 +1,5 @@
 package sms_template_search_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsTemplateSearchResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsTemplateSearchData `json:"data"`

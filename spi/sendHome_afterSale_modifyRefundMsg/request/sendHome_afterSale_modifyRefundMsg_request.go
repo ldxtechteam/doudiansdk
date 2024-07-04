@@ -1,32 +1,28 @@
 package sendHome_afterSale_modifyRefundMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_afterSale_modifyRefundMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeAfterSaleModifyRefundMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeAfterSaleModifyRefundMsgParam 
-	Response *sendHome_afterSale_modifyRefundMsg_response.SendHomeAfterSaleModifyRefundMsgResponse 
+	Param    *SendHomeAfterSaleModifyRefundMsgParam
+	Response *sendHome_afterSale_modifyRefundMsg_response.SendHomeAfterSaleModifyRefundMsgResponse
 }
-func (c *SendHomeAfterSaleModifyRefundMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeAfterSaleModifyRefundMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleModifyRefundMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeAfterSaleModifyRefundMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeAfterSaleModifyRefundMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeAfterSaleModifyRefundMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeAfterSaleModifyRefundMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeAfterSaleModifyRefundMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeAfterSaleModifyRefundMsgRequest) ResponseJson() (string, error)
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeAfterSaleModifyRefundMsgRequest {
 
-func New() *SendHomeAfterSaleModifyRefundMsgRequest{
-	
 	request := new(SendHomeAfterSaleModifyRefundMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeAfterSaleModifyRefundMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeAfterSaleModifyRefundMsgParam struct {
 	// after_sale_id:售后单idstore_id:门店idshop_id:店铺idorder_id:订单IDreason_code:申请售后原因apply_time：售后申请时间refund_type：退款类型。1：店铺单退2：sku单退part_type：是否是自定义金额退款 1: 金额全部退款 2: 金额部分退款refund_amount： 申请退款总金额refund_post_amount：申请退款的配送费refund_packing_amount：申请退款的打包费evidence：退款凭证refund_sku_list：退款商品（列表）

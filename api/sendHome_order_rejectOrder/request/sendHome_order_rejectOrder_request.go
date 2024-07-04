@@ -1,21 +1,19 @@
 package sendHome_order_rejectOrder_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_order_rejectOrder/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeOrderRejectOrderRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeOrderRejectOrderParam 
+	Param *SendHomeOrderRejectOrderParam
 }
-func (c *SendHomeOrderRejectOrderRequest) GetUrlPath() string{
+
+func (c *SendHomeOrderRejectOrderRequest) GetUrlPath() string {
 	return "/sendHome/order/rejectOrder"
 }
 
-
-func New() *SendHomeOrderRejectOrderRequest{
+func New() *SendHomeOrderRejectOrderRequest {
 	request := &SendHomeOrderRejectOrderRequest{
 		Param: &SendHomeOrderRejectOrderParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeOrderRejectOrderRequest{
 
 }
 
-
-func (c *SendHomeOrderRejectOrderRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_order_rejectOrder_response.SendHomeOrderRejectOrderResponse, error){
+func (c *SendHomeOrderRejectOrderRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_order_rejectOrder_response.SendHomeOrderRejectOrderResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeOrderRejectOrderRequest) Execute(accessToken *doudian_sdk.Acces
 
 }
 
-
-func (c *SendHomeOrderRejectOrderRequest) GetParamObject() interface{}{
+func (c *SendHomeOrderRejectOrderRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeOrderRejectOrderRequest) GetParams() *SendHomeOrderRejectOrderParam{
+func (c *SendHomeOrderRejectOrderRequest) GetParams() *SendHomeOrderRejectOrderParam {
 	return c.Param
 }
-
 
 type SendHomeOrderRejectOrderParam struct {
 	// 门店id

@@ -1,9 +1,5 @@
 package sms_send_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsSendResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSendData `json:"data"`

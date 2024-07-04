@@ -1,32 +1,28 @@
 package sendHome_product_productStatusChange_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_product_productStatusChange/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeProductProductStatusChangeRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeProductProductStatusChangeParam 
-	Response *sendHome_product_productStatusChange_response.SendHomeProductProductStatusChangeResponse 
+	Param    *SendHomeProductProductStatusChangeParam
+	Response *sendHome_product_productStatusChange_response.SendHomeProductProductStatusChangeResponse
 }
-func (c *SendHomeProductProductStatusChangeRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeProductProductStatusChangeRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeProductProductStatusChangeRequest) GetResponseObject() interface{}{
+func (c *SendHomeProductProductStatusChangeRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeProductProductStatusChangeRequest) Execute() (interface{}, error){
+func (c *SendHomeProductProductStatusChangeRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeProductProductStatusChangeRequest) ResponseJson() (string, error){
+func (c *SendHomeProductProductStatusChangeRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeProductProductStatusChangeRequest) ResponseJson() (string, erro
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeProductProductStatusChangeRequest {
 
-func New() *SendHomeProductProductStatusChangeRequest{
-	
 	request := new(SendHomeProductProductStatusChangeRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeProductProductStatusChangeRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeProductProductStatusChangeParam struct {
 	// SPI类型，服务商可根据type做不同的回调逻辑商品状态变化类型：21

@@ -1,9 +1,5 @@
 package open_binaryupload_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type OpenBinaryuploadResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenBinaryuploadData `json:"data"`

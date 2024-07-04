@@ -1,21 +1,19 @@
 package product_isv_createProductFromSupplyPlatform_request
 
 import (
-	"doudian.com/open/sdk_golang/api/product_isv_createProductFromSupplyPlatform/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type ProductIsvCreateProductFromSupplyPlatformRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *ProductIsvCreateProductFromSupplyPlatformParam 
+	Param *ProductIsvCreateProductFromSupplyPlatformParam
 }
-func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetUrlPath() string{
+
+func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetUrlPath() string {
 	return "/product/isv/createProductFromSupplyPlatform"
 }
 
-
-func New() *ProductIsvCreateProductFromSupplyPlatformRequest{
+func New() *ProductIsvCreateProductFromSupplyPlatformRequest {
 	request := &ProductIsvCreateProductFromSupplyPlatformRequest{
 		Param: &ProductIsvCreateProductFromSupplyPlatformParam{},
 	}
@@ -25,8 +23,7 @@ func New() *ProductIsvCreateProductFromSupplyPlatformRequest{
 
 }
 
-
-func (c *ProductIsvCreateProductFromSupplyPlatformRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_createProductFromSupplyPlatform_response.ProductIsvCreateProductFromSupplyPlatformResponse, error){
+func (c *ProductIsvCreateProductFromSupplyPlatformRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_createProductFromSupplyPlatform_response.ProductIsvCreateProductFromSupplyPlatformResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *ProductIsvCreateProductFromSupplyPlatformRequest) Execute(accessToken *
 
 }
 
-
-func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetParamObject() interface{}{
+func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetParams() *ProductIsvCreateProductFromSupplyPlatformParam{
+func (c *ProductIsvCreateProductFromSupplyPlatformRequest) GetParams() *ProductIsvCreateProductFromSupplyPlatformParam {
 	return c.Param
 }
-
 
 type ProductIsvCreateProductFromSupplyPlatformParam struct {
 	// 搜索词id

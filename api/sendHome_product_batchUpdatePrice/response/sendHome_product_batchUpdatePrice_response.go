@@ -1,9 +1,5 @@
 package sendHome_product_batchUpdatePrice_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SendHomeProductBatchUpdatePriceResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SendHomeProductBatchUpdatePriceData `json:"data"`

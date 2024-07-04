@@ -1,21 +1,19 @@
 package sms_template_revoke_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_template_revoke/response"
-	"doudian.com/open/sdk_golang/core"
-	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsTemplateRevokeRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsTemplateRevokeParam 
+	Param *SmsTemplateRevokeParam
 }
-func (c *SmsTemplateRevokeRequest) GetUrlPath() string{
+
+func (c *SmsTemplateRevokeRequest) GetUrlPath() string {
 	return "/sms/template/revoke"
 }
 
-
-func New() *SmsTemplateRevokeRequest{
+func New() *SmsTemplateRevokeRequest {
 	request := &SmsTemplateRevokeRequest{
 		Param: &SmsTemplateRevokeParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsTemplateRevokeRequest{
 
 }
 
-
-func (c *SmsTemplateRevokeRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_revoke_response.SmsTemplateRevokeResponse, error){
+func (c *SmsTemplateRevokeRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_revoke_response.SmsTemplateRevokeResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsTemplateRevokeRequest) Execute(accessToken *doudian_sdk.AccessToken)
 
 }
 
-
-func (c *SmsTemplateRevokeRequest) GetParamObject() interface{}{
+func (c *SmsTemplateRevokeRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsTemplateRevokeRequest) GetParams() *SmsTemplateRevokeParam{
+func (c *SmsTemplateRevokeRequest) GetParams() *SmsTemplateRevokeParam {
 	return c.Param
 }
-
 
 type SmsTemplateRevokeParam struct {
 	// 短信发送渠道，主要做资源隔离

@@ -1,21 +1,19 @@
 package sendHome_store_getStoreList_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_store_getStoreList/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeStoreGetStoreListRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeStoreGetStoreListParam 
+	Param *SendHomeStoreGetStoreListParam
 }
-func (c *SendHomeStoreGetStoreListRequest) GetUrlPath() string{
+
+func (c *SendHomeStoreGetStoreListRequest) GetUrlPath() string {
 	return "/sendHome/store/getStoreList"
 }
 
-
-func New() *SendHomeStoreGetStoreListRequest{
+func New() *SendHomeStoreGetStoreListRequest {
 	request := &SendHomeStoreGetStoreListRequest{
 		Param: &SendHomeStoreGetStoreListParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeStoreGetStoreListRequest{
 
 }
 
-
-func (c *SendHomeStoreGetStoreListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_store_getStoreList_response.SendHomeStoreGetStoreListResponse, error){
+func (c *SendHomeStoreGetStoreListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_store_getStoreList_response.SendHomeStoreGetStoreListResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeStoreGetStoreListRequest) Execute(accessToken *doudian_sdk.Acce
 
 }
 
-
-func (c *SendHomeStoreGetStoreListRequest) GetParamObject() interface{}{
+func (c *SendHomeStoreGetStoreListRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeStoreGetStoreListRequest) GetParams() *SendHomeStoreGetStoreListParam{
+func (c *SendHomeStoreGetStoreListRequest) GetParams() *SendHomeStoreGetStoreListParam {
 	return c.Param
 }
-
 
 type SendHomeStoreGetStoreListParam struct {
 	// 门店id集合，用于查询门店信息，最大长度50

@@ -1,6 +1,6 @@
 package demo_spi_response
 
-import doudian_sdk "doudian.com/open/sdk_golang/core"
+import doudian_sdk "github.com/ldxtechteam/doudiansdk/core"
 
 type DemoSpiResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
@@ -14,4 +14,3 @@ func (d *DemoSpiResponse) GetData() interface{} {
 type DemoSpiData struct {
 	Data1 string
 }
-

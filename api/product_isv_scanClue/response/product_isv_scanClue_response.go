@@ -1,9 +1,5 @@
 package product_isv_scanClue_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type ProductIsvScanClueResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data []DataItem `json:"data"`

@@ -1,21 +1,19 @@
 package order_batchDecrypt_request
 
 import (
-	"doudian.com/open/sdk_golang/api/order_batchDecrypt/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OrderBatchDecryptRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OrderBatchDecryptParam 
+	Param *OrderBatchDecryptParam
 }
-func (c *OrderBatchDecryptRequest) GetUrlPath() string{
+
+func (c *OrderBatchDecryptRequest) GetUrlPath() string {
 	return "/order/batchDecrypt"
 }
 
-
-func New() *OrderBatchDecryptRequest{
+func New() *OrderBatchDecryptRequest {
 	request := &OrderBatchDecryptRequest{
 		Param: &OrderBatchDecryptParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OrderBatchDecryptRequest{
 
 }
 
-
-func (c *OrderBatchDecryptRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_batchDecrypt_response.OrderBatchDecryptResponse, error){
+func (c *OrderBatchDecryptRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_batchDecrypt_response.OrderBatchDecryptResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OrderBatchDecryptRequest) Execute(accessToken *doudian_sdk.AccessToken)
 
 }
 
-
-func (c *OrderBatchDecryptRequest) GetParamObject() interface{}{
+func (c *OrderBatchDecryptRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OrderBatchDecryptRequest) GetParams() *OrderBatchDecryptParam{
+func (c *OrderBatchDecryptRequest) GetParams() *OrderBatchDecryptParam {
 	return c.Param
 }
-
 
 type CipherInfosItem struct {
 	// 订单号

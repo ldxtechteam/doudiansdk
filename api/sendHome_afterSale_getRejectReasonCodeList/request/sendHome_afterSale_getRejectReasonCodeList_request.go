@@ -1,21 +1,19 @@
 package sendHome_afterSale_getRejectReasonCodeList_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_afterSale_getRejectReasonCodeList/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeAfterSaleGetRejectReasonCodeListRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeAfterSaleGetRejectReasonCodeListParam 
+	Param *SendHomeAfterSaleGetRejectReasonCodeListParam
 }
-func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetUrlPath() string{
+
+func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetUrlPath() string {
 	return "/sendHome/afterSale/getRejectReasonCodeList"
 }
 
-
-func New() *SendHomeAfterSaleGetRejectReasonCodeListRequest{
+func New() *SendHomeAfterSaleGetRejectReasonCodeListRequest {
 	request := &SendHomeAfterSaleGetRejectReasonCodeListRequest{
 		Param: &SendHomeAfterSaleGetRejectReasonCodeListParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeAfterSaleGetRejectReasonCodeListRequest{
 
 }
 
-
-func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_afterSale_getRejectReasonCodeList_response.SendHomeAfterSaleGetRejectReasonCodeListResponse, error){
+func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_afterSale_getRejectReasonCodeList_response.SendHomeAfterSaleGetRejectReasonCodeListResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) Execute(accessToken *d
 
 }
 
-
-func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetParamObject() interface{}{
+func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetParams() *SendHomeAfterSaleGetRejectReasonCodeListParam{
+func (c *SendHomeAfterSaleGetRejectReasonCodeListRequest) GetParams() *SendHomeAfterSaleGetRejectReasonCodeListParam {
 	return c.Param
 }
-
 
 type SendHomeAfterSaleGetRejectReasonCodeListParam struct {
 	// 门店ID

@@ -1,21 +1,19 @@
 package sms_template_apply_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_template_apply/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsTemplateApplyRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsTemplateApplyParam 
+	Param *SmsTemplateApplyParam
 }
-func (c *SmsTemplateApplyRequest) GetUrlPath() string{
+
+func (c *SmsTemplateApplyRequest) GetUrlPath() string {
 	return "/sms/template/apply"
 }
 
-
-func New() *SmsTemplateApplyRequest{
+func New() *SmsTemplateApplyRequest {
 	request := &SmsTemplateApplyRequest{
 		Param: &SmsTemplateApplyParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsTemplateApplyRequest{
 
 }
 
-
-func (c *SmsTemplateApplyRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_apply_response.SmsTemplateApplyResponse, error){
+func (c *SmsTemplateApplyRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_apply_response.SmsTemplateApplyResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsTemplateApplyRequest) Execute(accessToken *doudian_sdk.AccessToken) 
 
 }
 
-
-func (c *SmsTemplateApplyRequest) GetParamObject() interface{}{
+func (c *SmsTemplateApplyRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsTemplateApplyRequest) GetParams() *SmsTemplateApplyParam{
+func (c *SmsTemplateApplyRequest) GetParams() *SmsTemplateApplyParam {
 	return c.Param
 }
-
 
 type SmsTemplateApplyParam struct {
 	// 短信发送渠道，主要做资源隔离

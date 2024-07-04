@@ -1,10 +1,9 @@
 package example
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	demo_spi_request "doudian.com/open/sdk_golang/spi/demo_spi/request"
-	demo_spi_response "doudian.com/open/sdk_golang/spi/demo_spi/response"
 	"fmt"
+	demo_spi_request "github.com/ldxtechteam/doudiansdk/spi/demo_spi/request"
+	demo_spi_response "github.com/ldxtechteam/doudiansdk/spi/demo_spi/response"
 )
 
 func ApiExample() {

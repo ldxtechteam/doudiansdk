@@ -1,21 +1,19 @@
 package sendHome_settle_getLedger_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_settle_getLedger/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeSettleGetLedgerRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeSettleGetLedgerParam 
+	Param *SendHomeSettleGetLedgerParam
 }
-func (c *SendHomeSettleGetLedgerRequest) GetUrlPath() string{
+
+func (c *SendHomeSettleGetLedgerRequest) GetUrlPath() string {
 	return "/sendHome/settle/getLedger"
 }
 
-
-func New() *SendHomeSettleGetLedgerRequest{
+func New() *SendHomeSettleGetLedgerRequest {
 	request := &SendHomeSettleGetLedgerRequest{
 		Param: &SendHomeSettleGetLedgerParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeSettleGetLedgerRequest{
 
 }
 
-
-func (c *SendHomeSettleGetLedgerRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_settle_getLedger_response.SendHomeSettleGetLedgerResponse, error){
+func (c *SendHomeSettleGetLedgerRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_settle_getLedger_response.SendHomeSettleGetLedgerResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeSettleGetLedgerRequest) Execute(accessToken *doudian_sdk.Access
 
 }
 
-
-func (c *SendHomeSettleGetLedgerRequest) GetParamObject() interface{}{
+func (c *SendHomeSettleGetLedgerRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeSettleGetLedgerRequest) GetParams() *SendHomeSettleGetLedgerParam{
+func (c *SendHomeSettleGetLedgerRequest) GetParams() *SendHomeSettleGetLedgerParam {
 	return c.Param
 }
-
 
 type SendHomeSettleGetLedgerParam struct {
 	// 订单ID

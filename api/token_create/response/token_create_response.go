@@ -1,9 +1,5 @@
 package token_create_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type TokenCreateResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *TokenCreateData `json:"data"`

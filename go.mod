@@ -1,3 +1,3 @@
-module doudian.com/open/sdk_golang
+module github.com/ldxtechteam/doudiansdk
 
 go 1.16

@@ -1,21 +1,19 @@
 package openCloud_v1_imageVersion_create_request
 
 import (
-	"doudian.com/open/sdk_golang/api/openCloud_v1_imageVersion_create/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OpenCloudV1ImageVersionCreateRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OpenCloudV1ImageVersionCreateParam 
+	Param *OpenCloudV1ImageVersionCreateParam
 }
-func (c *OpenCloudV1ImageVersionCreateRequest) GetUrlPath() string{
+
+func (c *OpenCloudV1ImageVersionCreateRequest) GetUrlPath() string {
 	return "/openCloud/v1/imageVersion/create"
 }
 
-
-func New() *OpenCloudV1ImageVersionCreateRequest{
+func New() *OpenCloudV1ImageVersionCreateRequest {
 	request := &OpenCloudV1ImageVersionCreateRequest{
 		Param: &OpenCloudV1ImageVersionCreateParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OpenCloudV1ImageVersionCreateRequest{
 
 }
 
-
-func (c *OpenCloudV1ImageVersionCreateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*openCloud_v1_imageVersion_create_response.OpenCloudV1ImageVersionCreateResponse, error){
+func (c *OpenCloudV1ImageVersionCreateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*openCloud_v1_imageVersion_create_response.OpenCloudV1ImageVersionCreateResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OpenCloudV1ImageVersionCreateRequest) Execute(accessToken *doudian_sdk.
 
 }
 
-
-func (c *OpenCloudV1ImageVersionCreateRequest) GetParamObject() interface{}{
+func (c *OpenCloudV1ImageVersionCreateRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OpenCloudV1ImageVersionCreateRequest) GetParams() *OpenCloudV1ImageVersionCreateParam{
+func (c *OpenCloudV1ImageVersionCreateRequest) GetParams() *OpenCloudV1ImageVersionCreateParam {
 	return c.Param
 }
-
 
 type OpenCloudV1ImageVersionCreateParam struct {
 	// 容器服务id

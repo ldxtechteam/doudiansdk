@@ -1,32 +1,28 @@
 package sendHome_order_PayMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_order_PayMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeOrderPayMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeOrderPayMsgParam 
-	Response *sendHome_order_PayMsg_response.SendHomeOrderPayMsgResponse 
+	Param    *SendHomeOrderPayMsgParam
+	Response *sendHome_order_PayMsg_response.SendHomeOrderPayMsgResponse
 }
-func (c *SendHomeOrderPayMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeOrderPayMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeOrderPayMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeOrderPayMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeOrderPayMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeOrderPayMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeOrderPayMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeOrderPayMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeOrderPayMsgRequest) ResponseJson() (string, error){
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeOrderPayMsgRequest {
 
-func New() *SendHomeOrderPayMsgRequest{
-	
 	request := new(SendHomeOrderPayMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeOrderPayMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeOrderPayMsgParam struct {
 	// 业务参数：内容和[订单详情]接口一致，可看订单详情接口

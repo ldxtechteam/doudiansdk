@@ -1,9 +1,5 @@
 package sendHome_afterSale_getRejectReasonCodeList_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SendHomeAfterSaleGetRejectReasonCodeListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SendHomeAfterSaleGetRejectReasonCodeListData `json:"data"`

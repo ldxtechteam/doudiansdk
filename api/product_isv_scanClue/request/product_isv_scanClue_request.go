@@ -1,21 +1,19 @@
 package product_isv_scanClue_request
 
 import (
-	"doudian.com/open/sdk_golang/api/product_isv_scanClue/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type ProductIsvScanClueRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *ProductIsvScanClueParam 
+	Param *ProductIsvScanClueParam
 }
-func (c *ProductIsvScanClueRequest) GetUrlPath() string{
+
+func (c *ProductIsvScanClueRequest) GetUrlPath() string {
 	return "/product/isv/scanClue"
 }
 
-
-func New() *ProductIsvScanClueRequest{
+func New() *ProductIsvScanClueRequest {
 	request := &ProductIsvScanClueRequest{
 		Param: &ProductIsvScanClueParam{},
 	}
@@ -25,8 +23,7 @@ func New() *ProductIsvScanClueRequest{
 
 }
 
-
-func (c *ProductIsvScanClueRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_scanClue_response.ProductIsvScanClueResponse, error){
+func (c *ProductIsvScanClueRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_scanClue_response.ProductIsvScanClueResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *ProductIsvScanClueRequest) Execute(accessToken *doudian_sdk.AccessToken
 
 }
 
-
-func (c *ProductIsvScanClueRequest) GetParamObject() interface{}{
+func (c *ProductIsvScanClueRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *ProductIsvScanClueRequest) GetParams() *ProductIsvScanClueParam{
+func (c *ProductIsvScanClueRequest) GetParams() *ProductIsvScanClueParam {
 	return c.Param
 }
-
 
 type ProductIsvScanClueParam struct {
 	// 线索Id（游标id）

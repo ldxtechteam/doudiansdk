@@ -2,9 +2,9 @@ package doudian_sdk
 
 import (
 	"bytes"
-	"doudian.com/open/sdk_golang/errors"
-	"doudian.com/open/sdk_golang/utils"
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/errors"
+	"github.com/ldxtechteam/doudiansdk/utils"
 	"strings"
 )
 
@@ -63,7 +63,6 @@ func (c *DoudianOpSpiClientImpl) Request(request DoudianOpSpiRequest) (interface
 	calcSign := utils.SpiSign(appKey, appSecret, timestamp, string(sortedParamJsonStr), signMethod)
 	if calcSign != sign && calcSign != signV2 {
 
-
 		bf := bytes.NewBufferString("")
 		jsonEncoder := json.NewEncoder(bf)
 		jsonEncoder.SetEscapeHTML(false)
@@ -84,7 +83,7 @@ func (c *DoudianOpSpiClientImpl) Request(request DoudianOpSpiRequest) (interface
 }
 
 type DoudianOpSpiContext struct {
-	request DoudianOpSpiRequest
+	request  DoudianOpSpiRequest
 	response DoudianOpSpiResponse
 }
 
@@ -96,7 +95,7 @@ func (c *DoudianOpSpiContext) GetData() interface{} {
 	return c.response.GetData()
 }
 
-func (c * DoudianOpSpiContext) WrapSuccess() {
+func (c *DoudianOpSpiContext) WrapSuccess() {
 	c.response.SetCode(0)
 }
 
@@ -104,5 +103,3 @@ func (c *DoudianOpSpiContext) WrapError(code int64, message string) {
 	c.response.SetCode(code)
 	c.response.SetMessage(message)
 }
-
-

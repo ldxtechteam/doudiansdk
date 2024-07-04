@@ -1,32 +1,28 @@
 package sendHome_afterSale_closeRefundMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_afterSale_closeRefundMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeAfterSaleCloseRefundMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeAfterSaleCloseRefundMsgParam 
-	Response *sendHome_afterSale_closeRefundMsg_response.SendHomeAfterSaleCloseRefundMsgResponse 
+	Param    *SendHomeAfterSaleCloseRefundMsgParam
+	Response *sendHome_afterSale_closeRefundMsg_response.SendHomeAfterSaleCloseRefundMsgResponse
 }
-func (c *SendHomeAfterSaleCloseRefundMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeAfterSaleCloseRefundMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleCloseRefundMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeAfterSaleCloseRefundMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeAfterSaleCloseRefundMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeAfterSaleCloseRefundMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeAfterSaleCloseRefundMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeAfterSaleCloseRefundMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeAfterSaleCloseRefundMsgRequest) ResponseJson() (string, error){
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeAfterSaleCloseRefundMsgRequest {
 
-func New() *SendHomeAfterSaleCloseRefundMsgRequest{
-	
 	request := new(SendHomeAfterSaleCloseRefundMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeAfterSaleCloseRefundMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeAfterSaleCloseRefundMsgParam struct {
 	// after_sale_id:售后单idstore_id:门店idshop_id:店铺idorder_id:订单IDclose_time:退款关闭时间update_time:售后单更新时间

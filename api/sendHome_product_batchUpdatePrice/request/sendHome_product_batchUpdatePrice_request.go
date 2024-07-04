@@ -1,21 +1,19 @@
 package sendHome_product_batchUpdatePrice_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_product_batchUpdatePrice/response"
-	"doudian.com/open/sdk_golang/core"
-	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeProductBatchUpdatePriceRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeProductBatchUpdatePriceParam 
+	Param *SendHomeProductBatchUpdatePriceParam
 }
-func (c *SendHomeProductBatchUpdatePriceRequest) GetUrlPath() string{
+
+func (c *SendHomeProductBatchUpdatePriceRequest) GetUrlPath() string {
 	return "/sendHome/product/batchUpdatePrice"
 }
 
-
-func New() *SendHomeProductBatchUpdatePriceRequest{
+func New() *SendHomeProductBatchUpdatePriceRequest {
 	request := &SendHomeProductBatchUpdatePriceRequest{
 		Param: &SendHomeProductBatchUpdatePriceParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeProductBatchUpdatePriceRequest{
 
 }
 
-
-func (c *SendHomeProductBatchUpdatePriceRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_batchUpdatePrice_response.SendHomeProductBatchUpdatePriceResponse, error){
+func (c *SendHomeProductBatchUpdatePriceRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_batchUpdatePrice_response.SendHomeProductBatchUpdatePriceResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeProductBatchUpdatePriceRequest) Execute(accessToken *doudian_sd
 
 }
 
-
-func (c *SendHomeProductBatchUpdatePriceRequest) GetParamObject() interface{}{
+func (c *SendHomeProductBatchUpdatePriceRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeProductBatchUpdatePriceRequest) GetParams() *SendHomeProductBatchUpdatePriceParam{
+func (c *SendHomeProductBatchUpdatePriceRequest) GetParams() *SendHomeProductBatchUpdatePriceParam {
 	return c.Param
 }
-
 
 type SkuPricesItem struct {
 	// 商品规格ID；一次请求sku维度最大支持20个sku更新

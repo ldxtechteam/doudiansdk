@@ -1,9 +1,5 @@
 package sms_batchSend_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsBatchSendResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsBatchSendData `json:"data"`

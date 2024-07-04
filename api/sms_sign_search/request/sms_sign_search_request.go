@@ -1,21 +1,19 @@
 package sms_sign_search_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_sign_search/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsSignSearchRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsSignSearchParam 
+	Param *SmsSignSearchParam
 }
-func (c *SmsSignSearchRequest) GetUrlPath() string{
+
+func (c *SmsSignSearchRequest) GetUrlPath() string {
 	return "/sms/sign/search"
 }
 
-
-func New() *SmsSignSearchRequest{
+func New() *SmsSignSearchRequest {
 	request := &SmsSignSearchRequest{
 		Param: &SmsSignSearchParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsSignSearchRequest{
 
 }
 
-
-func (c *SmsSignSearchRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sign_search_response.SmsSignSearchResponse, error){
+func (c *SmsSignSearchRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sign_search_response.SmsSignSearchResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsSignSearchRequest) Execute(accessToken *doudian_sdk.AccessToken) (*s
 
 }
 
-
-func (c *SmsSignSearchRequest) GetParamObject() interface{}{
+func (c *SmsSignSearchRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsSignSearchRequest) GetParams() *SmsSignSearchParam{
+func (c *SmsSignSearchRequest) GetParams() *SmsSignSearchParam {
 	return c.Param
 }
-
 
 type SmsSignSearchParam struct {
 	// 短信发送渠道，主要做资源隔离

@@ -1,21 +1,19 @@
 package order_getSearchIndex_request
 
 import (
-	"doudian.com/open/sdk_golang/api/order_getSearchIndex/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OrderGetSearchIndexRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OrderGetSearchIndexParam 
+	Param *OrderGetSearchIndexParam
 }
-func (c *OrderGetSearchIndexRequest) GetUrlPath() string{
+
+func (c *OrderGetSearchIndexRequest) GetUrlPath() string {
 	return "/order/getSearchIndex"
 }
 
-
-func New() *OrderGetSearchIndexRequest{
+func New() *OrderGetSearchIndexRequest {
 	request := &OrderGetSearchIndexRequest{
 		Param: &OrderGetSearchIndexParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OrderGetSearchIndexRequest{
 
 }
 
-
-func (c *OrderGetSearchIndexRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_getSearchIndex_response.OrderGetSearchIndexResponse, error){
+func (c *OrderGetSearchIndexRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_getSearchIndex_response.OrderGetSearchIndexResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OrderGetSearchIndexRequest) Execute(accessToken *doudian_sdk.AccessToke
 
 }
 
-
-func (c *OrderGetSearchIndexRequest) GetParamObject() interface{}{
+func (c *OrderGetSearchIndexRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OrderGetSearchIndexRequest) GetParams() *OrderGetSearchIndexParam{
+func (c *OrderGetSearchIndexRequest) GetParams() *OrderGetSearchIndexParam {
 	return c.Param
 }
-
 
 type OrderGetSearchIndexParam struct {
 	// 电话号码

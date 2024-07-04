@@ -1,14 +1,14 @@
 package demo_spi_request
 
 import (
-	doudian_sdk "doudian.com/open/sdk_golang/core"
-	demo_spi_response "doudian.com/open/sdk_golang/spi/demo_spi/response"
-	"doudian.com/open/sdk_golang/utils"
+	doudian_sdk "github.com/ldxtechteam/doudiansdk/core"
+	demo_spi_response "github.com/ldxtechteam/doudiansdk/spi/demo_spi/response"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type DemoSpiRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *DemoSpiParam
+	Param    *DemoSpiParam
 	Response *demo_spi_response.DemoSpiResponse
 }
 

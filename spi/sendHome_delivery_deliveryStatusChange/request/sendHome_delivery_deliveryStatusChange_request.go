@@ -1,32 +1,28 @@
 package sendHome_delivery_deliveryStatusChange_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_delivery_deliveryStatusChange/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeDeliveryDeliveryStatusChangeRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeDeliveryDeliveryStatusChangeParam 
-	Response *sendHome_delivery_deliveryStatusChange_response.SendHomeDeliveryDeliveryStatusChangeResponse 
+	Param    *SendHomeDeliveryDeliveryStatusChangeParam
+	Response *sendHome_delivery_deliveryStatusChange_response.SendHomeDeliveryDeliveryStatusChangeResponse
 }
-func (c *SendHomeDeliveryDeliveryStatusChangeRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeDeliveryDeliveryStatusChangeRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeDeliveryDeliveryStatusChangeRequest) GetResponseObject() interface{}{
+func (c *SendHomeDeliveryDeliveryStatusChangeRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeDeliveryDeliveryStatusChangeRequest) Execute() (interface{}, error){
+func (c *SendHomeDeliveryDeliveryStatusChangeRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeDeliveryDeliveryStatusChangeRequest) ResponseJson() (string, error){
+func (c *SendHomeDeliveryDeliveryStatusChangeRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeDeliveryDeliveryStatusChangeRequest) ResponseJson() (string, er
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeDeliveryDeliveryStatusChangeRequest {
 
-func New() *SendHomeDeliveryDeliveryStatusChangeRequest{
-	
 	request := new(SendHomeDeliveryDeliveryStatusChangeRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeDeliveryDeliveryStatusChangeRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeDeliveryDeliveryStatusChangeParam struct {
 	// SPI类型，服务商可根据type做不同的回调逻辑运力状态变化对应枚举：31

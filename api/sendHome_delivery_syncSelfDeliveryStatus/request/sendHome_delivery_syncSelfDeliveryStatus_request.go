@@ -1,21 +1,19 @@
 package sendHome_delivery_syncSelfDeliveryStatus_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_delivery_syncSelfDeliveryStatus/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeDeliverySyncSelfDeliveryStatusRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeDeliverySyncSelfDeliveryStatusParam 
+	Param *SendHomeDeliverySyncSelfDeliveryStatusParam
 }
-func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetUrlPath() string{
+
+func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetUrlPath() string {
 	return "/sendHome/delivery/syncSelfDeliveryStatus"
 }
 
-
-func New() *SendHomeDeliverySyncSelfDeliveryStatusRequest{
+func New() *SendHomeDeliverySyncSelfDeliveryStatusRequest {
 	request := &SendHomeDeliverySyncSelfDeliveryStatusRequest{
 		Param: &SendHomeDeliverySyncSelfDeliveryStatusParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeDeliverySyncSelfDeliveryStatusRequest{
 
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_delivery_syncSelfDeliveryStatus_response.SendHomeDeliverySyncSelfDeliveryStatusResponse, error){
+func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_delivery_syncSelfDeliveryStatus_response.SendHomeDeliverySyncSelfDeliveryStatusResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) Execute(accessToken *dou
 
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetParamObject() interface{}{
+func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetParams() *SendHomeDeliverySyncSelfDeliveryStatusParam{
+func (c *SendHomeDeliverySyncSelfDeliveryStatusRequest) GetParams() *SendHomeDeliverySyncSelfDeliveryStatusParam {
 	return c.Param
 }
-
 
 type SendHomeDeliverySyncSelfDeliveryStatusParam struct {
 	// 是否需要重新发货，默认为否；当订单发生变更时商家自行传入是否需要重新发货

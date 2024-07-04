@@ -1,21 +1,19 @@
 package sendHome_afterSale_operateAfterSale_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_afterSale_operateAfterSale/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeAfterSaleOperateAfterSaleRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeAfterSaleOperateAfterSaleParam 
+	Param *SendHomeAfterSaleOperateAfterSaleParam
 }
-func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetUrlPath() string{
+
+func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetUrlPath() string {
 	return "/sendHome/afterSale/operateAfterSale"
 }
 
-
-func New() *SendHomeAfterSaleOperateAfterSaleRequest{
+func New() *SendHomeAfterSaleOperateAfterSaleRequest {
 	request := &SendHomeAfterSaleOperateAfterSaleRequest{
 		Param: &SendHomeAfterSaleOperateAfterSaleParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeAfterSaleOperateAfterSaleRequest{
 
 }
 
-
-func (c *SendHomeAfterSaleOperateAfterSaleRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_afterSale_operateAfterSale_response.SendHomeAfterSaleOperateAfterSaleResponse, error){
+func (c *SendHomeAfterSaleOperateAfterSaleRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_afterSale_operateAfterSale_response.SendHomeAfterSaleOperateAfterSaleResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeAfterSaleOperateAfterSaleRequest) Execute(accessToken *doudian_
 
 }
 
-
-func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetParamObject() interface{}{
+func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetParams() *SendHomeAfterSaleOperateAfterSaleParam{
+func (c *SendHomeAfterSaleOperateAfterSaleRequest) GetParams() *SendHomeAfterSaleOperateAfterSaleParam {
 	return c.Param
 }
-
 
 type EvidenceItem struct {
 	// 操作凭证类型,凭证类型，1:图片，2:视频(暂不支持)，3:音频(暂不支持展示)，4:文字(暂不支持展示)。

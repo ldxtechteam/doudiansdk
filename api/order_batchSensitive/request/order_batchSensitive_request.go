@@ -1,21 +1,19 @@
 package order_batchSensitive_request
 
 import (
-	"doudian.com/open/sdk_golang/api/order_batchSensitive/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OrderBatchSensitiveRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OrderBatchSensitiveParam 
+	Param *OrderBatchSensitiveParam
 }
-func (c *OrderBatchSensitiveRequest) GetUrlPath() string{
+
+func (c *OrderBatchSensitiveRequest) GetUrlPath() string {
 	return "/order/batchSensitive"
 }
 
-
-func New() *OrderBatchSensitiveRequest{
+func New() *OrderBatchSensitiveRequest {
 	request := &OrderBatchSensitiveRequest{
 		Param: &OrderBatchSensitiveParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OrderBatchSensitiveRequest{
 
 }
 
-
-func (c *OrderBatchSensitiveRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_batchSensitive_response.OrderBatchSensitiveResponse, error){
+func (c *OrderBatchSensitiveRequest) Execute(accessToken *doudian_sdk.AccessToken) (*order_batchSensitive_response.OrderBatchSensitiveResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OrderBatchSensitiveRequest) Execute(accessToken *doudian_sdk.AccessToke
 
 }
 
-
-func (c *OrderBatchSensitiveRequest) GetParamObject() interface{}{
+func (c *OrderBatchSensitiveRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OrderBatchSensitiveRequest) GetParams() *OrderBatchSensitiveParam{
+func (c *OrderBatchSensitiveRequest) GetParams() *OrderBatchSensitiveParam {
 	return c.Param
 }
-
 
 type CipherInfosItem struct {
 	// 业务标识，value为抖音订单号

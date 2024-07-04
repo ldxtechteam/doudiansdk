@@ -1,21 +1,19 @@
 package sms_template_search_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_template_search/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsTemplateSearchRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsTemplateSearchParam 
+	Param *SmsTemplateSearchParam
 }
-func (c *SmsTemplateSearchRequest) GetUrlPath() string{
+
+func (c *SmsTemplateSearchRequest) GetUrlPath() string {
 	return "/sms/template/search"
 }
 
-
-func New() *SmsTemplateSearchRequest{
+func New() *SmsTemplateSearchRequest {
 	request := &SmsTemplateSearchRequest{
 		Param: &SmsTemplateSearchParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsTemplateSearchRequest{
 
 }
 
-
-func (c *SmsTemplateSearchRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_search_response.SmsTemplateSearchResponse, error){
+func (c *SmsTemplateSearchRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_template_search_response.SmsTemplateSearchResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsTemplateSearchRequest) Execute(accessToken *doudian_sdk.AccessToken)
 
 }
 
-
-func (c *SmsTemplateSearchRequest) GetParamObject() interface{}{
+func (c *SmsTemplateSearchRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsTemplateSearchRequest) GetParams() *SmsTemplateSearchParam{
+func (c *SmsTemplateSearchRequest) GetParams() *SmsTemplateSearchParam {
 	return c.Param
 }
-
 
 type SmsTemplateSearchParam struct {
 	// 短信发送渠道，主要做资源隔离

@@ -1,9 +1,5 @@
 package sms_sign_delete_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsSignDeleteResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignDeleteData `json:"data"`

@@ -1,21 +1,19 @@
 package token_create_request
 
 import (
-	"doudian.com/open/sdk_golang/api/token_create/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type TokenCreateRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *TokenCreateParam 
+	Param *TokenCreateParam
 }
-func (c *TokenCreateRequest) GetUrlPath() string{
+
+func (c *TokenCreateRequest) GetUrlPath() string {
 	return "/token/create"
 }
 
-
-func New() *TokenCreateRequest{
+func New() *TokenCreateRequest {
 	request := &TokenCreateRequest{
 		Param: &TokenCreateParam{},
 	}
@@ -25,8 +23,7 @@ func New() *TokenCreateRequest{
 
 }
 
-
-func (c *TokenCreateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*token_create_response.TokenCreateResponse, error){
+func (c *TokenCreateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*token_create_response.TokenCreateResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *TokenCreateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*tok
 
 }
 
-
-func (c *TokenCreateRequest) GetParamObject() interface{}{
+func (c *TokenCreateRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *TokenCreateRequest) GetParams() *TokenCreateParam{
+func (c *TokenCreateRequest) GetParams() *TokenCreateParam {
 	return c.Param
 }
-
 
 type TokenCreateParam struct {
 	// 授权码；参数必传，工具型应用: 传code值；自用型应用:传""

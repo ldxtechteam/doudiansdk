@@ -1,21 +1,19 @@
 package open_binaryupload_request
 
 import (
-	"doudian.com/open/sdk_golang/api/open_binaryupload/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OpenBinaryuploadRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OpenBinaryuploadParam 
+	Param *OpenBinaryuploadParam
 }
-func (c *OpenBinaryuploadRequest) GetUrlPath() string{
+
+func (c *OpenBinaryuploadRequest) GetUrlPath() string {
 	return "/open/binaryupload"
 }
 
-
-func New() *OpenBinaryuploadRequest{
+func New() *OpenBinaryuploadRequest {
 	request := &OpenBinaryuploadRequest{
 		Param: &OpenBinaryuploadParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OpenBinaryuploadRequest{
 
 }
 
-
-func (c *OpenBinaryuploadRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_binaryupload_response.OpenBinaryuploadResponse, error){
+func (c *OpenBinaryuploadRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_binaryupload_response.OpenBinaryuploadResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OpenBinaryuploadRequest) Execute(accessToken *doudian_sdk.AccessToken) 
 
 }
 
-
-func (c *OpenBinaryuploadRequest) GetParamObject() interface{}{
+func (c *OpenBinaryuploadRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OpenBinaryuploadRequest) GetParams() *OpenBinaryuploadParam{
+func (c *OpenBinaryuploadRequest) GetParams() *OpenBinaryuploadParam {
 	return c.Param
 }
-
 
 type OpenBinaryuploadParam struct {
 	// 二进制内容，utf-8编码

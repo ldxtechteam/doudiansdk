@@ -1,21 +1,19 @@
 package token_refresh_request
 
 import (
-	"doudian.com/open/sdk_golang/api/token_refresh/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type TokenRefreshRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *TokenRefreshParam 
+	Param *TokenRefreshParam
 }
-func (c *TokenRefreshRequest) GetUrlPath() string{
+
+func (c *TokenRefreshRequest) GetUrlPath() string {
 	return "/token/refresh"
 }
 
-
-func New() *TokenRefreshRequest{
+func New() *TokenRefreshRequest {
 	request := &TokenRefreshRequest{
 		Param: &TokenRefreshParam{},
 	}
@@ -25,8 +23,7 @@ func New() *TokenRefreshRequest{
 
 }
 
-
-func (c *TokenRefreshRequest) Execute(accessToken *doudian_sdk.AccessToken) (*token_refresh_response.TokenRefreshResponse, error){
+func (c *TokenRefreshRequest) Execute(accessToken *doudian_sdk.AccessToken) (*token_refresh_response.TokenRefreshResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *TokenRefreshRequest) Execute(accessToken *doudian_sdk.AccessToken) (*to
 
 }
 
-
-func (c *TokenRefreshRequest) GetParamObject() interface{}{
+func (c *TokenRefreshRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *TokenRefreshRequest) GetParams() *TokenRefreshParam{
+func (c *TokenRefreshRequest) GetParams() *TokenRefreshParam {
 	return c.Param
 }
-
 
 type TokenRefreshParam struct {
 	// 用于刷新access_token的刷新令牌；有效期：14 天；

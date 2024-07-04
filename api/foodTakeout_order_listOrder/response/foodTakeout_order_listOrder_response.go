@@ -1,9 +1,5 @@
 package foodTakeout_order_listOrder_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type FoodTakeoutOrderListOrderResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *FoodTakeoutOrderListOrderData `json:"data"`

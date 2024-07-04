@@ -3,8 +3,8 @@ package http
 import (
 	"bytes"
 	"crypto/tls"
-	"doudian.com/open/sdk_golang/errors"
 	"fmt"
+	"github.com/ldxtechteam/doudiansdk/errors"
 	"io/ioutil"
 	"net"
 	"net/http"

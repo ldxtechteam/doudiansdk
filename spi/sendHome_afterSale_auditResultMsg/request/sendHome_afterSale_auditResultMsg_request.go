@@ -1,32 +1,28 @@
 package sendHome_afterSale_auditResultMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_afterSale_auditResultMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeAfterSaleAuditResultMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeAfterSaleAuditResultMsgParam 
-	Response *sendHome_afterSale_auditResultMsg_response.SendHomeAfterSaleAuditResultMsgResponse 
+	Param    *SendHomeAfterSaleAuditResultMsgParam
+	Response *sendHome_afterSale_auditResultMsg_response.SendHomeAfterSaleAuditResultMsgResponse
 }
-func (c *SendHomeAfterSaleAuditResultMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeAfterSaleAuditResultMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleAuditResultMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeAfterSaleAuditResultMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeAfterSaleAuditResultMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeAfterSaleAuditResultMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeAfterSaleAuditResultMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeAfterSaleAuditResultMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeAfterSaleAuditResultMsgRequest) ResponseJson() (string, error){
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeAfterSaleAuditResultMsgRequest {
 
-func New() *SendHomeAfterSaleAuditResultMsgRequest{
-	
 	request := new(SendHomeAfterSaleAuditResultMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeAfterSaleAuditResultMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeAfterSaleAuditResultMsgParam struct {
 	// after_sale_id:售后单idstore_id:门店idshop_id:店铺idorder_id:订单IDresult：是否同意退款,1同意,2拒绝reject_reason_code：拒绝原因update_time：售后单更新时间，秒级时间戳

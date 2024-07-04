@@ -1,21 +1,19 @@
 package sms_send_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_send/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsSendRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsSendParam 
+	Param *SmsSendParam
 }
-func (c *SmsSendRequest) GetUrlPath() string{
+
+func (c *SmsSendRequest) GetUrlPath() string {
 	return "/sms/send"
 }
 
-
-func New() *SmsSendRequest{
+func New() *SmsSendRequest {
 	request := &SmsSendRequest{
 		Param: &SmsSendParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsSendRequest{
 
 }
 
-
-func (c *SmsSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_send_response.SmsSendResponse, error){
+func (c *SmsSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_send_response.SmsSendResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sen
 
 }
 
-
-func (c *SmsSendRequest) GetParamObject() interface{}{
+func (c *SmsSendRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsSendRequest) GetParams() *SmsSendParam{
+func (c *SmsSendRequest) GetParams() *SmsSendParam {
 	return c.Param
 }
-
 
 type SmsSendParam struct {
 	// 短信发送渠道，主要做资源隔离

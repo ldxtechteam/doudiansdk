@@ -1,21 +1,19 @@
 package sms_public_template_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_public_template/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsPublicTemplateRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsPublicTemplateParam 
+	Param *SmsPublicTemplateParam
 }
-func (c *SmsPublicTemplateRequest) GetUrlPath() string{
+
+func (c *SmsPublicTemplateRequest) GetUrlPath() string {
 	return "/sms/public/template"
 }
 
-
-func New() *SmsPublicTemplateRequest{
+func New() *SmsPublicTemplateRequest {
 	request := &SmsPublicTemplateRequest{
 		Param: &SmsPublicTemplateParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsPublicTemplateRequest{
 
 }
 
-
-func (c *SmsPublicTemplateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_public_template_response.SmsPublicTemplateResponse, error){
+func (c *SmsPublicTemplateRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_public_template_response.SmsPublicTemplateResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsPublicTemplateRequest) Execute(accessToken *doudian_sdk.AccessToken)
 
 }
 
-
-func (c *SmsPublicTemplateRequest) GetParamObject() interface{}{
+func (c *SmsPublicTemplateRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsPublicTemplateRequest) GetParams() *SmsPublicTemplateParam{
+func (c *SmsPublicTemplateRequest) GetParams() *SmsPublicTemplateParam {
 	return c.Param
 }
-
 
 type SmsPublicTemplateParam struct {
 	// 每页数据大小

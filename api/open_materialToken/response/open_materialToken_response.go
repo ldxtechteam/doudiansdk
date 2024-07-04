@@ -1,9 +1,5 @@
 package open_materialToken_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type OpenMaterialTokenResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenMaterialTokenData `json:"data"`

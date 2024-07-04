@@ -1,21 +1,19 @@
 package sendHome_delivery_syncSelfDeliveryLocation_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_delivery_syncSelfDeliveryLocation/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeDeliverySyncSelfDeliveryLocationRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeDeliverySyncSelfDeliveryLocationParam 
+	Param *SendHomeDeliverySyncSelfDeliveryLocationParam
 }
-func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetUrlPath() string{
+
+func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetUrlPath() string {
 	return "/sendHome/delivery/syncSelfDeliveryLocation"
 }
 
-
-func New() *SendHomeDeliverySyncSelfDeliveryLocationRequest{
+func New() *SendHomeDeliverySyncSelfDeliveryLocationRequest {
 	request := &SendHomeDeliverySyncSelfDeliveryLocationRequest{
 		Param: &SendHomeDeliverySyncSelfDeliveryLocationParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeDeliverySyncSelfDeliveryLocationRequest{
 
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_delivery_syncSelfDeliveryLocation_response.SendHomeDeliverySyncSelfDeliveryLocationResponse, error){
+func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_delivery_syncSelfDeliveryLocation_response.SendHomeDeliverySyncSelfDeliveryLocationResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) Execute(accessToken *d
 
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetParamObject() interface{}{
+func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetParams() *SendHomeDeliverySyncSelfDeliveryLocationParam{
+func (c *SendHomeDeliverySyncSelfDeliveryLocationRequest) GetParams() *SendHomeDeliverySyncSelfDeliveryLocationParam {
 	return c.Param
 }
-
 
 type SendHomeDeliverySyncSelfDeliveryLocationParam struct {
 	// 抖音电商shop order单id

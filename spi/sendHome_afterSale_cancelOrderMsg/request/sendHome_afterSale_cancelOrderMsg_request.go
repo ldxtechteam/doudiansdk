@@ -1,32 +1,28 @@
 package sendHome_afterSale_cancelOrderMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_afterSale_cancelOrderMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeAfterSaleCancelOrderMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeAfterSaleCancelOrderMsgParam 
-	Response *sendHome_afterSale_cancelOrderMsg_response.SendHomeAfterSaleCancelOrderMsgResponse 
+	Param    *SendHomeAfterSaleCancelOrderMsgParam
+	Response *sendHome_afterSale_cancelOrderMsg_response.SendHomeAfterSaleCancelOrderMsgResponse
 }
-func (c *SendHomeAfterSaleCancelOrderMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeAfterSaleCancelOrderMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeAfterSaleCancelOrderMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeAfterSaleCancelOrderMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeAfterSaleCancelOrderMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeAfterSaleCancelOrderMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeAfterSaleCancelOrderMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeAfterSaleCancelOrderMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeAfterSaleCancelOrderMsgRequest) ResponseJson() (string, error){
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeAfterSaleCancelOrderMsgRequest {
 
-func New() *SendHomeAfterSaleCancelOrderMsgRequest{
-	
 	request := new(SendHomeAfterSaleCancelOrderMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeAfterSaleCancelOrderMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeAfterSaleCancelOrderMsgParam struct {
 	// shop_id:总户idstore_id:门店idorder_id:订单id

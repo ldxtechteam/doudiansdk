@@ -1,9 +1,5 @@
 package order_batchEncrypt_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type OrderBatchEncryptResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OrderBatchEncryptData `json:"data"`

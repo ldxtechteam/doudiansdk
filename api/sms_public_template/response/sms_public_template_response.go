@@ -1,9 +1,5 @@
 package sms_public_template_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsPublicTemplateResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsPublicTemplateData `json:"data"`

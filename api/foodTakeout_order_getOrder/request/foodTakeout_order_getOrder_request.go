@@ -1,21 +1,19 @@
 package foodTakeout_order_getOrder_request
 
 import (
-	"doudian.com/open/sdk_golang/api/foodTakeout_order_getOrder/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type FoodTakeoutOrderGetOrderRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *FoodTakeoutOrderGetOrderParam 
+	Param *FoodTakeoutOrderGetOrderParam
 }
-func (c *FoodTakeoutOrderGetOrderRequest) GetUrlPath() string{
+
+func (c *FoodTakeoutOrderGetOrderRequest) GetUrlPath() string {
 	return "/foodTakeout/order/getOrder"
 }
 
-
-func New() *FoodTakeoutOrderGetOrderRequest{
+func New() *FoodTakeoutOrderGetOrderRequest {
 	request := &FoodTakeoutOrderGetOrderRequest{
 		Param: &FoodTakeoutOrderGetOrderParam{},
 	}
@@ -25,8 +23,7 @@ func New() *FoodTakeoutOrderGetOrderRequest{
 
 }
 
-
-func (c *FoodTakeoutOrderGetOrderRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_order_getOrder_response.FoodTakeoutOrderGetOrderResponse, error){
+func (c *FoodTakeoutOrderGetOrderRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_order_getOrder_response.FoodTakeoutOrderGetOrderResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *FoodTakeoutOrderGetOrderRequest) Execute(accessToken *doudian_sdk.Acces
 
 }
 
-
-func (c *FoodTakeoutOrderGetOrderRequest) GetParamObject() interface{}{
+func (c *FoodTakeoutOrderGetOrderRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *FoodTakeoutOrderGetOrderRequest) GetParams() *FoodTakeoutOrderGetOrderParam{
+func (c *FoodTakeoutOrderGetOrderRequest) GetParams() *FoodTakeoutOrderGetOrderParam {
 	return c.Param
 }
-
 
 type FoodTakeoutOrderGetOrderParam struct {
 	// 订单idlist

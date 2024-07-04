@@ -1,21 +1,19 @@
 package sendHome_product_batchUpdateStock_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_product_batchUpdateStock/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeProductBatchUpdateStockRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeProductBatchUpdateStockParam 
+	Param *SendHomeProductBatchUpdateStockParam
 }
-func (c *SendHomeProductBatchUpdateStockRequest) GetUrlPath() string{
+
+func (c *SendHomeProductBatchUpdateStockRequest) GetUrlPath() string {
 	return "/sendHome/product/batchUpdateStock"
 }
 
-
-func New() *SendHomeProductBatchUpdateStockRequest{
+func New() *SendHomeProductBatchUpdateStockRequest {
 	request := &SendHomeProductBatchUpdateStockRequest{
 		Param: &SendHomeProductBatchUpdateStockParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeProductBatchUpdateStockRequest{
 
 }
 
-
-func (c *SendHomeProductBatchUpdateStockRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_batchUpdateStock_response.SendHomeProductBatchUpdateStockResponse, error){
+func (c *SendHomeProductBatchUpdateStockRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_batchUpdateStock_response.SendHomeProductBatchUpdateStockResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeProductBatchUpdateStockRequest) Execute(accessToken *doudian_sd
 
 }
 
-
-func (c *SendHomeProductBatchUpdateStockRequest) GetParamObject() interface{}{
+func (c *SendHomeProductBatchUpdateStockRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeProductBatchUpdateStockRequest) GetParams() *SendHomeProductBatchUpdateStockParam{
+func (c *SendHomeProductBatchUpdateStockRequest) GetParams() *SendHomeProductBatchUpdateStockParam {
 	return c.Param
 }
-
 
 type SkuStocksItem struct {
 	// 商品规格ID；一次请求sku维度最大支持50个sku更新

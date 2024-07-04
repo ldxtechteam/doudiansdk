@@ -1,21 +1,19 @@
 package security_batchReportOrderSecurityEvent_request
 
 import (
-	"doudian.com/open/sdk_golang/api/security_batchReportOrderSecurityEvent/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SecurityBatchReportOrderSecurityEventRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SecurityBatchReportOrderSecurityEventParam 
+	Param *SecurityBatchReportOrderSecurityEventParam
 }
-func (c *SecurityBatchReportOrderSecurityEventRequest) GetUrlPath() string{
+
+func (c *SecurityBatchReportOrderSecurityEventRequest) GetUrlPath() string {
 	return "/security/batchReportOrderSecurityEvent"
 }
 
-
-func New() *SecurityBatchReportOrderSecurityEventRequest{
+func New() *SecurityBatchReportOrderSecurityEventRequest {
 	request := &SecurityBatchReportOrderSecurityEventRequest{
 		Param: &SecurityBatchReportOrderSecurityEventParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SecurityBatchReportOrderSecurityEventRequest{
 
 }
 
-
-func (c *SecurityBatchReportOrderSecurityEventRequest) Execute(accessToken *doudian_sdk.AccessToken) (*security_batchReportOrderSecurityEvent_response.SecurityBatchReportOrderSecurityEventResponse, error){
+func (c *SecurityBatchReportOrderSecurityEventRequest) Execute(accessToken *doudian_sdk.AccessToken) (*security_batchReportOrderSecurityEvent_response.SecurityBatchReportOrderSecurityEventResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SecurityBatchReportOrderSecurityEventRequest) Execute(accessToken *doud
 
 }
 
-
-func (c *SecurityBatchReportOrderSecurityEventRequest) GetParamObject() interface{}{
+func (c *SecurityBatchReportOrderSecurityEventRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SecurityBatchReportOrderSecurityEventRequest) GetParams() *SecurityBatchReportOrderSecurityEventParam{
+func (c *SecurityBatchReportOrderSecurityEventRequest) GetParams() *SecurityBatchReportOrderSecurityEventParam {
 	return c.Param
 }
-
 
 type IdentifyInfoListItem struct {
 	// 代表订单某个信息的字段名 (可直接取抖店开放平台返回的订单信息中的字段名)

@@ -1,21 +1,19 @@
 package sms_sign_apply_list_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_sign_apply_list/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsSignApplyListRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsSignApplyListParam 
+	Param *SmsSignApplyListParam
 }
-func (c *SmsSignApplyListRequest) GetUrlPath() string{
+
+func (c *SmsSignApplyListRequest) GetUrlPath() string {
 	return "/sms/sign/apply/list"
 }
 
-
-func New() *SmsSignApplyListRequest{
+func New() *SmsSignApplyListRequest {
 	request := &SmsSignApplyListRequest{
 		Param: &SmsSignApplyListParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsSignApplyListRequest{
 
 }
 
-
-func (c *SmsSignApplyListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sign_apply_list_response.SmsSignApplyListResponse, error){
+func (c *SmsSignApplyListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sign_apply_list_response.SmsSignApplyListResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsSignApplyListRequest) Execute(accessToken *doudian_sdk.AccessToken) 
 
 }
 
-
-func (c *SmsSignApplyListRequest) GetParamObject() interface{}{
+func (c *SmsSignApplyListRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsSignApplyListRequest) GetParams() *SmsSignApplyListParam{
+func (c *SmsSignApplyListRequest) GetParams() *SmsSignApplyListParam {
 	return c.Param
 }
-
 
 type SmsSignApplyListParam struct {
 	// 短信发送渠道，主要做资源隔离

@@ -1,21 +1,19 @@
 package sms_batchSend_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_batchSend/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsBatchSendRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsBatchSendParam 
+	Param *SmsBatchSendParam
 }
-func (c *SmsBatchSendRequest) GetUrlPath() string{
+
+func (c *SmsBatchSendRequest) GetUrlPath() string {
 	return "/sms/batchSend"
 }
 
-
-func New() *SmsBatchSendRequest{
+func New() *SmsBatchSendRequest {
 	request := &SmsBatchSendRequest{
 		Param: &SmsBatchSendParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsBatchSendRequest{
 
 }
 
-
-func (c *SmsBatchSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_batchSend_response.SmsBatchSendResponse, error){
+func (c *SmsBatchSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_batchSend_response.SmsBatchSendResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsBatchSendRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sm
 
 }
 
-
-func (c *SmsBatchSendRequest) GetParamObject() interface{}{
+func (c *SmsBatchSendRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsBatchSendRequest) GetParams() *SmsBatchSendParam{
+func (c *SmsBatchSendRequest) GetParams() *SmsBatchSendParam {
 	return c.Param
 }
-
 
 type SmsMessageListItem struct {
 	// 外呼id，由/member/getOutboundId接口获取

@@ -1,21 +1,19 @@
 package open_getAuthInfo_request
 
 import (
-	"doudian.com/open/sdk_golang/api/open_getAuthInfo/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OpenGetAuthInfoRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OpenGetAuthInfoParam 
+	Param *OpenGetAuthInfoParam
 }
-func (c *OpenGetAuthInfoRequest) GetUrlPath() string{
+
+func (c *OpenGetAuthInfoRequest) GetUrlPath() string {
 	return "/open/getAuthInfo"
 }
 
-
-func New() *OpenGetAuthInfoRequest{
+func New() *OpenGetAuthInfoRequest {
 	request := &OpenGetAuthInfoRequest{
 		Param: &OpenGetAuthInfoParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OpenGetAuthInfoRequest{
 
 }
 
-
-func (c *OpenGetAuthInfoRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_getAuthInfo_response.OpenGetAuthInfoResponse, error){
+func (c *OpenGetAuthInfoRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_getAuthInfo_response.OpenGetAuthInfoResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OpenGetAuthInfoRequest) Execute(accessToken *doudian_sdk.AccessToken) (
 
 }
 
-
-func (c *OpenGetAuthInfoRequest) GetParamObject() interface{}{
+func (c *OpenGetAuthInfoRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OpenGetAuthInfoRequest) GetParams() *OpenGetAuthInfoParam{
+func (c *OpenGetAuthInfoRequest) GetParams() *OpenGetAuthInfoParam {
 	return c.Param
 }
-
 
 type OpenGetAuthInfoParam struct {
 	// 授权主体ID，这里为店铺ID

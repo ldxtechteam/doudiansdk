@@ -1,21 +1,19 @@
 package open_materialToken_request
 
 import (
-	"doudian.com/open/sdk_golang/api/open_materialToken/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type OpenMaterialTokenRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *OpenMaterialTokenParam 
+	Param *OpenMaterialTokenParam
 }
-func (c *OpenMaterialTokenRequest) GetUrlPath() string{
+
+func (c *OpenMaterialTokenRequest) GetUrlPath() string {
 	return "/open/materialToken"
 }
 
-
-func New() *OpenMaterialTokenRequest{
+func New() *OpenMaterialTokenRequest {
 	request := &OpenMaterialTokenRequest{
 		Param: &OpenMaterialTokenParam{},
 	}
@@ -25,8 +23,7 @@ func New() *OpenMaterialTokenRequest{
 
 }
 
-
-func (c *OpenMaterialTokenRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_materialToken_response.OpenMaterialTokenResponse, error){
+func (c *OpenMaterialTokenRequest) Execute(accessToken *doudian_sdk.AccessToken) (*open_materialToken_response.OpenMaterialTokenResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *OpenMaterialTokenRequest) Execute(accessToken *doudian_sdk.AccessToken)
 
 }
 
-
-func (c *OpenMaterialTokenRequest) GetParamObject() interface{}{
+func (c *OpenMaterialTokenRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *OpenMaterialTokenRequest) GetParams() *OpenMaterialTokenParam{
+func (c *OpenMaterialTokenRequest) GetParams() *OpenMaterialTokenParam {
 	return c.Param
 }
-
 
 type OpenMaterialTokenParam struct {
 	// 需要上传的素材数量

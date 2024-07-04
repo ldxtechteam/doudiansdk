@@ -1,9 +1,5 @@
 package sendHome_store_getStoreList_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SendHomeStoreGetStoreListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SendHomeStoreGetStoreListData `json:"data"`

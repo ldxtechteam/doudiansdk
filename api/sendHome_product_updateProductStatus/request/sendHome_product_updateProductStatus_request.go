@@ -1,21 +1,19 @@
 package sendHome_product_updateProductStatus_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sendHome_product_updateProductStatus/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SendHomeProductUpdateProductStatusRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SendHomeProductUpdateProductStatusParam 
+	Param *SendHomeProductUpdateProductStatusParam
 }
-func (c *SendHomeProductUpdateProductStatusRequest) GetUrlPath() string{
+
+func (c *SendHomeProductUpdateProductStatusRequest) GetUrlPath() string {
 	return "/sendHome/product/updateProductStatus"
 }
 
-
-func New() *SendHomeProductUpdateProductStatusRequest{
+func New() *SendHomeProductUpdateProductStatusRequest {
 	request := &SendHomeProductUpdateProductStatusRequest{
 		Param: &SendHomeProductUpdateProductStatusParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SendHomeProductUpdateProductStatusRequest{
 
 }
 
-
-func (c *SendHomeProductUpdateProductStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_updateProductStatus_response.SendHomeProductUpdateProductStatusResponse, error){
+func (c *SendHomeProductUpdateProductStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sendHome_product_updateProductStatus_response.SendHomeProductUpdateProductStatusResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SendHomeProductUpdateProductStatusRequest) Execute(accessToken *doudian
 
 }
 
-
-func (c *SendHomeProductUpdateProductStatusRequest) GetParamObject() interface{}{
+func (c *SendHomeProductUpdateProductStatusRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeProductUpdateProductStatusRequest) GetParams() *SendHomeProductUpdateProductStatusParam{
+func (c *SendHomeProductUpdateProductStatusRequest) GetParams() *SendHomeProductUpdateProductStatusParam {
 	return c.Param
 }
-
 
 type SendHomeProductUpdateProductStatusParam struct {
 	// 抖店门店id

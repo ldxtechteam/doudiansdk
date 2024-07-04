@@ -1,9 +1,5 @@
 package sms_sign_apply_list_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type SmsSignApplyListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignApplyListData `json:"data"`

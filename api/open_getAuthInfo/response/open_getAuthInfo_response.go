@@ -1,9 +1,5 @@
 package open_getAuthInfo_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type OpenGetAuthInfoResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenGetAuthInfoData `json:"data"`

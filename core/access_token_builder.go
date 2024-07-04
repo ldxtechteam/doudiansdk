@@ -1,8 +1,8 @@
 package doudian_sdk
 
 import (
-	"doudian.com/open/sdk_golang/errors"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/errors"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type AccessToken struct {

@@ -1,9 +1,5 @@
 package token_refresh_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type TokenRefreshResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *TokenRefreshData `json:"data"`

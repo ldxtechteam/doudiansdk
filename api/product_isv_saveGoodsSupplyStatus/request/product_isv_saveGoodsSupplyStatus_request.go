@@ -1,21 +1,19 @@
 package product_isv_saveGoodsSupplyStatus_request
 
 import (
-	"doudian.com/open/sdk_golang/api/product_isv_saveGoodsSupplyStatus/response"
-	"doudian.com/open/sdk_golang/core"
-	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type ProductIsvSaveGoodsSupplyStatusRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *ProductIsvSaveGoodsSupplyStatusParam 
+	Param *ProductIsvSaveGoodsSupplyStatusParam
 }
-func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetUrlPath() string{
+
+func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetUrlPath() string {
 	return "/product/isv/saveGoodsSupplyStatus"
 }
 
-
-func New() *ProductIsvSaveGoodsSupplyStatusRequest{
+func New() *ProductIsvSaveGoodsSupplyStatusRequest {
 	request := &ProductIsvSaveGoodsSupplyStatusRequest{
 		Param: &ProductIsvSaveGoodsSupplyStatusParam{},
 	}
@@ -25,8 +23,7 @@ func New() *ProductIsvSaveGoodsSupplyStatusRequest{
 
 }
 
-
-func (c *ProductIsvSaveGoodsSupplyStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_saveGoodsSupplyStatus_response.ProductIsvSaveGoodsSupplyStatusResponse, error){
+func (c *ProductIsvSaveGoodsSupplyStatusRequest) Execute(accessToken *doudian_sdk.AccessToken) (*product_isv_saveGoodsSupplyStatus_response.ProductIsvSaveGoodsSupplyStatusResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *ProductIsvSaveGoodsSupplyStatusRequest) Execute(accessToken *doudian_sd
 
 }
 
-
-func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetParamObject() interface{}{
+func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetParams() *ProductIsvSaveGoodsSupplyStatusParam{
+func (c *ProductIsvSaveGoodsSupplyStatusRequest) GetParams() *ProductIsvSaveGoodsSupplyStatusParam {
 	return c.Param
 }
-
 
 type StatusItem struct {
 	// 线索id

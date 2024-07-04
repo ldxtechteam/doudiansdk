@@ -1,9 +1,5 @@
 package rights_info_response
 
-import (
-	"doudian.com/open/sdk_golang/core"
-)
-
 type RightsInfoResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *RightsInfoData `json:"data"`

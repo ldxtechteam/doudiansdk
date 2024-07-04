@@ -1,10 +1,10 @@
 package doudian_sdk
 
 import (
-	"doudian.com/open/sdk_golang/core/http"
-	"doudian.com/open/sdk_golang/errors"
-	"doudian.com/open/sdk_golang/utils"
 	"fmt"
+	"github.com/ldxtechteam/doudiansdk/core/http"
+	"github.com/ldxtechteam/doudiansdk/errors"
+	"github.com/ldxtechteam/doudiansdk/utils"
 	"strings"
 	"time"
 )

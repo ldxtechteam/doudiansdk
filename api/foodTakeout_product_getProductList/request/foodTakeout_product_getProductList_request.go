@@ -1,21 +1,19 @@
 package foodTakeout_product_getProductList_request
 
 import (
-	"doudian.com/open/sdk_golang/api/foodTakeout_product_getProductList/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type FoodTakeoutProductGetProductListRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *FoodTakeoutProductGetProductListParam 
+	Param *FoodTakeoutProductGetProductListParam
 }
-func (c *FoodTakeoutProductGetProductListRequest) GetUrlPath() string{
+
+func (c *FoodTakeoutProductGetProductListRequest) GetUrlPath() string {
 	return "/foodTakeout/product/getProductList"
 }
 
-
-func New() *FoodTakeoutProductGetProductListRequest{
+func New() *FoodTakeoutProductGetProductListRequest {
 	request := &FoodTakeoutProductGetProductListRequest{
 		Param: &FoodTakeoutProductGetProductListParam{},
 	}
@@ -25,8 +23,7 @@ func New() *FoodTakeoutProductGetProductListRequest{
 
 }
 
-
-func (c *FoodTakeoutProductGetProductListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_product_getProductList_response.FoodTakeoutProductGetProductListResponse, error){
+func (c *FoodTakeoutProductGetProductListRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_product_getProductList_response.FoodTakeoutProductGetProductListResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *FoodTakeoutProductGetProductListRequest) Execute(accessToken *doudian_s
 
 }
 
-
-func (c *FoodTakeoutProductGetProductListRequest) GetParamObject() interface{}{
+func (c *FoodTakeoutProductGetProductListRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *FoodTakeoutProductGetProductListRequest) GetParams() *FoodTakeoutProductGetProductListParam{
+func (c *FoodTakeoutProductGetProductListRequest) GetParams() *FoodTakeoutProductGetProductListParam {
 	return c.Param
 }
-
 
 type FoodTakeoutProductGetProductListParam struct {
 	// 抖店门店id

@@ -1,21 +1,19 @@
 package sms_sendResult_request
 
 import (
-	"doudian.com/open/sdk_golang/api/sms_sendResult/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type SmsSendResultRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *SmsSendResultParam 
+	Param *SmsSendResultParam
 }
-func (c *SmsSendResultRequest) GetUrlPath() string{
+
+func (c *SmsSendResultRequest) GetUrlPath() string {
 	return "/sms/sendResult"
 }
 
-
-func New() *SmsSendResultRequest{
+func New() *SmsSendResultRequest {
 	request := &SmsSendResultRequest{
 		Param: &SmsSendResultParam{},
 	}
@@ -25,8 +23,7 @@ func New() *SmsSendResultRequest{
 
 }
 
-
-func (c *SmsSendResultRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sendResult_response.SmsSendResultResponse, error){
+func (c *SmsSendResultRequest) Execute(accessToken *doudian_sdk.AccessToken) (*sms_sendResult_response.SmsSendResultResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *SmsSendResultRequest) Execute(accessToken *doudian_sdk.AccessToken) (*s
 
 }
 
-
-func (c *SmsSendResultRequest) GetParamObject() interface{}{
+func (c *SmsSendResultRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SmsSendResultRequest) GetParams() *SmsSendResultParam{
+func (c *SmsSendResultRequest) GetParams() *SmsSendResultParam {
 	return c.Param
 }
-
 
 type SmsSendResultParam struct {
 	// 开始时间-时间戳，单位秒

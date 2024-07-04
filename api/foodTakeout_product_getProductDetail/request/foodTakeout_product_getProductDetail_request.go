@@ -1,21 +1,19 @@
 package foodTakeout_product_getProductDetail_request
 
 import (
-	"doudian.com/open/sdk_golang/api/foodTakeout_product_getProductDetail/response"
-	"doudian.com/open/sdk_golang/core"
 	"encoding/json"
 )
 
 type FoodTakeoutProductGetProductDetailRequest struct {
 	doudian_sdk.BaseDoudianOpApiRequest
-	Param *FoodTakeoutProductGetProductDetailParam 
+	Param *FoodTakeoutProductGetProductDetailParam
 }
-func (c *FoodTakeoutProductGetProductDetailRequest) GetUrlPath() string{
+
+func (c *FoodTakeoutProductGetProductDetailRequest) GetUrlPath() string {
 	return "/foodTakeout/product/getProductDetail"
 }
 
-
-func New() *FoodTakeoutProductGetProductDetailRequest{
+func New() *FoodTakeoutProductGetProductDetailRequest {
 	request := &FoodTakeoutProductGetProductDetailRequest{
 		Param: &FoodTakeoutProductGetProductDetailParam{},
 	}
@@ -25,8 +23,7 @@ func New() *FoodTakeoutProductGetProductDetailRequest{
 
 }
 
-
-func (c *FoodTakeoutProductGetProductDetailRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_product_getProductDetail_response.FoodTakeoutProductGetProductDetailResponse, error){
+func (c *FoodTakeoutProductGetProductDetailRequest) Execute(accessToken *doudian_sdk.AccessToken) (*foodTakeout_product_getProductDetail_response.FoodTakeoutProductGetProductDetailResponse, error) {
 	responseJson, err := c.GetClient().Request(c, accessToken)
 	if err != nil {
 		return nil, err
@@ -37,16 +34,13 @@ func (c *FoodTakeoutProductGetProductDetailRequest) Execute(accessToken *doudian
 
 }
 
-
-func (c *FoodTakeoutProductGetProductDetailRequest) GetParamObject() interface{}{
+func (c *FoodTakeoutProductGetProductDetailRequest) GetParamObject() interface{} {
 	return c.Param
 }
 
-
-func (c *FoodTakeoutProductGetProductDetailRequest) GetParams() *FoodTakeoutProductGetProductDetailParam{
+func (c *FoodTakeoutProductGetProductDetailRequest) GetParams() *FoodTakeoutProductGetProductDetailParam {
 	return c.Param
 }
-
 
 type ProductListItem struct {
 	// 商品ID和外部商品id二选一传输，优先选择product_id

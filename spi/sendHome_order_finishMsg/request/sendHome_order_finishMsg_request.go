@@ -1,32 +1,28 @@
 package sendHome_order_finishMsg_request
 
 import (
-	"doudian.com/open/sdk_golang/core"
-	"doudian.com/open/sdk_golang/spi/sendHome_order_finishMsg/response"
-	"doudian.com/open/sdk_golang/utils"
+	"github.com/ldxtechteam/doudiansdk/utils"
 )
 
 type SendHomeOrderFinishMsgRequest struct {
 	doudian_sdk.BaseDoudianOpSpiRequest
-	Param *SendHomeOrderFinishMsgParam 
-	Response *sendHome_order_finishMsg_response.SendHomeOrderFinishMsgResponse 
+	Param    *SendHomeOrderFinishMsgParam
+	Response *sendHome_order_finishMsg_response.SendHomeOrderFinishMsgResponse
 }
-func (c *SendHomeOrderFinishMsgRequest) GetParamJsonObject() interface{}{
+
+func (c *SendHomeOrderFinishMsgRequest) GetParamJsonObject() interface{} {
 	return c.Param
 }
 
-
-func (c *SendHomeOrderFinishMsgRequest) GetResponseObject() interface{}{
+func (c *SendHomeOrderFinishMsgRequest) GetResponseObject() interface{} {
 	return c.Response
 }
 
-
-func (c *SendHomeOrderFinishMsgRequest) Execute() (interface{}, error){
+func (c *SendHomeOrderFinishMsgRequest) Execute() (interface{}, error) {
 	return c.GetClient().Request(c)
 }
 
-
-func (c *SendHomeOrderFinishMsgRequest) ResponseJson() (string, error){
+func (c *SendHomeOrderFinishMsgRequest) ResponseJson() (string, error) {
 	responseObj, err := c.Execute()
 	if err != nil {
 		return "", err
@@ -34,9 +30,8 @@ func (c *SendHomeOrderFinishMsgRequest) ResponseJson() (string, error){
 	return utils.MarshalNoErr(responseObj), nil
 }
 
+func New() *SendHomeOrderFinishMsgRequest {
 
-func New() *SendHomeOrderFinishMsgRequest{
-	
 	request := new(SendHomeOrderFinishMsgRequest)
 	request.SetClient(doudian_sdk.DefaultDoudianOpSpiClient)
 	request.SetConfig(doudian_sdk.GlobalConfig)
@@ -47,7 +42,6 @@ func New() *SendHomeOrderFinishMsgRequest{
 	request.Response = response
 	return request
 }
-
 
 type SendHomeOrderFinishMsgParam struct {
 	// 消息具体内容
