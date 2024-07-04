@@ -1,6 +1,8 @@
 package product_isv_saveGoodsSupplyStatus_request
 
 import (
+	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/product_isv_saveGoodsSupplyStatus/response"
 	"github.com/ldxtechteam/doudiansdk/core"
 )
 

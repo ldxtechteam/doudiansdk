@@ -2,6 +2,8 @@ package open_binaryupload_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/open_binaryupload/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OpenBinaryuploadRequest struct {

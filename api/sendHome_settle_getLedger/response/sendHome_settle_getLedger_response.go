@@ -1,5 +1,9 @@
 package sendHome_settle_getLedger_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeSettleGetLedgerResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SendHomeSettleGetLedgerData `json:"data"`

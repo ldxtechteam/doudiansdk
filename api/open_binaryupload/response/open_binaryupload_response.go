@@ -1,5 +1,9 @@
 package open_binaryupload_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OpenBinaryuploadResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenBinaryuploadData `json:"data"`

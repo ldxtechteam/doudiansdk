@@ -1,5 +1,9 @@
 package sms_template_revoke_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsTemplateRevokeResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsTemplateRevokeData `json:"data"`

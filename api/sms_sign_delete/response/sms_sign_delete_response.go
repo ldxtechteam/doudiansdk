@@ -1,5 +1,9 @@
 package sms_sign_delete_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsSignDeleteResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignDeleteData `json:"data"`

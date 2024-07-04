@@ -1,5 +1,9 @@
 package sms_template_delete_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsTemplateDeleteResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsTemplateDeleteData `json:"data"`

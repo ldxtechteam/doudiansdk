@@ -1,5 +1,9 @@
 package sendHome_order_PayMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeOrderPayMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeOrderPayMsgData `json:"data"`

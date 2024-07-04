@@ -2,6 +2,8 @@ package security_batchReportOrderSecurityEvent_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/security_batchReportOrderSecurityEvent/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SecurityBatchReportOrderSecurityEventRequest struct {

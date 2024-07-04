@@ -2,6 +2,8 @@ package token_refresh_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/token_refresh/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type TokenRefreshRequest struct {

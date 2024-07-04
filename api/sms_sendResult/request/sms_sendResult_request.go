@@ -2,6 +2,8 @@ package sms_sendResult_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_sendResult/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsSendResultRequest struct {

@@ -1,5 +1,9 @@
 package order_batchSensitive_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OrderBatchSensitiveResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OrderBatchSensitiveData `json:"data"`

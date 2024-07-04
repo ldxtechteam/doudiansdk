@@ -2,6 +2,8 @@ package sms_template_delete_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_template_delete/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsTemplateDeleteRequest struct {

@@ -1,5 +1,9 @@
 package order_batchEncrypt_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OrderBatchEncryptResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OrderBatchEncryptData `json:"data"`

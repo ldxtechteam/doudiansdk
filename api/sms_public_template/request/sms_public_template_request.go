@@ -2,6 +2,8 @@ package sms_public_template_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_public_template/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsPublicTemplateRequest struct {

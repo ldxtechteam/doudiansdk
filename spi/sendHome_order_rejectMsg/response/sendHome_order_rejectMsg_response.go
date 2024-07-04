@@ -1,5 +1,9 @@
 package sendHome_order_rejectMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeOrderRejectMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeOrderRejectMsgData `json:"data"`

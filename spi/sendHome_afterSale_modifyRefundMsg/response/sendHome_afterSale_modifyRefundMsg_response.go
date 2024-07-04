@@ -1,5 +1,9 @@
 package sendHome_afterSale_modifyRefundMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeAfterSaleModifyRefundMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeAfterSaleModifyRefundMsgData `json:"data"`

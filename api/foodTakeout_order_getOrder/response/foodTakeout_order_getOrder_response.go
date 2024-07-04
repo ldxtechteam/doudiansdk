@@ -1,5 +1,9 @@
 package foodTakeout_order_getOrder_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type FoodTakeoutOrderGetOrderResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *FoodTakeoutOrderGetOrderData `json:"data"`

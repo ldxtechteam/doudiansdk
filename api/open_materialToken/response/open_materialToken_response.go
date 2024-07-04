@@ -1,5 +1,9 @@
 package open_materialToken_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OpenMaterialTokenResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenMaterialTokenData `json:"data"`

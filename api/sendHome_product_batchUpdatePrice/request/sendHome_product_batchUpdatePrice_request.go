@@ -1,6 +1,8 @@
 package sendHome_product_batchUpdatePrice_request
 
 import (
+	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_product_batchUpdatePrice/response"
 	"github.com/ldxtechteam/doudiansdk/core"
 )
 

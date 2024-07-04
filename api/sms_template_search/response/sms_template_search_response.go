@@ -1,5 +1,9 @@
 package sms_template_search_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsTemplateSearchResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsTemplateSearchData `json:"data"`

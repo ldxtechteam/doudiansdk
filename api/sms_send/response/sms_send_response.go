@@ -1,5 +1,9 @@
 package sms_send_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsSendResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSendData `json:"data"`

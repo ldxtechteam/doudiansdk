@@ -2,6 +2,8 @@ package sendHome_afterSale_getRejectReasonCodeList_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_afterSale_getRejectReasonCodeList/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeAfterSaleGetRejectReasonCodeListRequest struct {

@@ -2,6 +2,8 @@ package order_batchEncrypt_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/order_batchEncrypt/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OrderBatchEncryptRequest struct {

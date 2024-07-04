@@ -2,6 +2,7 @@ package example
 
 import (
 	"fmt"
+	"github.com/ldxtechteam/doudiansdk/core"
 	demo_spi_request "github.com/ldxtechteam/doudiansdk/spi/demo_spi/request"
 	demo_spi_response "github.com/ldxtechteam/doudiansdk/spi/demo_spi/response"
 )

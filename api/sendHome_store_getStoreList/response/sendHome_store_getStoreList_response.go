@@ -1,5 +1,9 @@
 package sendHome_store_getStoreList_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeStoreGetStoreListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SendHomeStoreGetStoreListData `json:"data"`

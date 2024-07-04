@@ -2,6 +2,8 @@ package sms_batchSend_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_batchSend/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsBatchSendRequest struct {

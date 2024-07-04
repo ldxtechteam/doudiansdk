@@ -1,5 +1,9 @@
 package sms_sign_search_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsSignSearchResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignSearchData `json:"data"`

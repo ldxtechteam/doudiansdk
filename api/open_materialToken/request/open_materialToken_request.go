@@ -2,6 +2,8 @@ package open_materialToken_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/open_materialToken/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OpenMaterialTokenRequest struct {

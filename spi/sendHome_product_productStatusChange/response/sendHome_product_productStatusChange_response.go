@@ -1,5 +1,9 @@
 package sendHome_product_productStatusChange_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeProductProductStatusChangeResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeProductProductStatusChangeData `json:"data"`

@@ -1,5 +1,9 @@
 package sendHome_afterSale_cancelOrderMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeAfterSaleCancelOrderMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeAfterSaleCancelOrderMsgData `json:"data"`

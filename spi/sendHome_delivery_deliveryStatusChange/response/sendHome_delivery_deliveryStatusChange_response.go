@@ -1,5 +1,9 @@
 package sendHome_delivery_deliveryStatusChange_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeDeliveryDeliveryStatusChangeResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeDeliveryDeliveryStatusChangeData `json:"data"`

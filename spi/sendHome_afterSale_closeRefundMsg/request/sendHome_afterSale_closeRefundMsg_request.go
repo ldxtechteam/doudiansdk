@@ -1,6 +1,8 @@
 package sendHome_afterSale_closeRefundMsg_request
 
 import (
+	"github.com/ldxtechteam/doudiansdk/core"
+	"github.com/ldxtechteam/doudiansdk/spi/sendHome_afterSale_closeRefundMsg/response"
 	"github.com/ldxtechteam/doudiansdk/utils"
 )
 

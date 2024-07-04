@@ -1,5 +1,9 @@
 package sms_template_apply_list_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsTemplateApplyListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsTemplateApplyListData `json:"data"`

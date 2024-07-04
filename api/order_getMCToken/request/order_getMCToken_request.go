@@ -2,6 +2,8 @@ package order_getMCToken_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/order_getMCToken/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OrderGetMCTokenRequest struct {

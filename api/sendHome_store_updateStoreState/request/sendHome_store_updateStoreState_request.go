@@ -2,6 +2,8 @@ package sendHome_store_updateStoreState_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_store_updateStoreState/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeStoreUpdateStoreStateRequest struct {

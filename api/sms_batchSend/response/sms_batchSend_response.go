@@ -1,5 +1,9 @@
 package sms_batchSend_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsBatchSendResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsBatchSendData `json:"data"`

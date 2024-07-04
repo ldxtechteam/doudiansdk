@@ -1,6 +1,8 @@
 package sendHome_afterSale_auditResultMsg_request
 
 import (
+	"github.com/ldxtechteam/doudiansdk/core"
+	"github.com/ldxtechteam/doudiansdk/spi/sendHome_afterSale_auditResultMsg/response"
 	"github.com/ldxtechteam/doudiansdk/utils"
 )
 

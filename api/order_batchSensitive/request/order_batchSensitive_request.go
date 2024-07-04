@@ -2,6 +2,8 @@ package order_batchSensitive_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/order_batchSensitive/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OrderBatchSensitiveRequest struct {

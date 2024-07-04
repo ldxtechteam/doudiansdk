@@ -2,6 +2,8 @@ package open_getAuthInfo_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/open_getAuthInfo/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OpenGetAuthInfoRequest struct {

@@ -1,5 +1,9 @@
 package order_getMCToken_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OrderGetMCTokenResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OrderGetMCTokenData `json:"data"`

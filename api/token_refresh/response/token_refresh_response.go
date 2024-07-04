@@ -1,5 +1,9 @@
 package token_refresh_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type TokenRefreshResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *TokenRefreshData `json:"data"`

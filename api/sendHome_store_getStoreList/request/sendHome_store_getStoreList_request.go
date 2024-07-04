@@ -2,6 +2,8 @@ package sendHome_store_getStoreList_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_store_getStoreList/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeStoreGetStoreListRequest struct {

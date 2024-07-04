@@ -2,6 +2,8 @@ package foodTakeout_product_getProductList_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/foodTakeout_product_getProductList/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type FoodTakeoutProductGetProductListRequest struct {

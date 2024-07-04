@@ -1,5 +1,9 @@
 package sendHome_order_finishMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeOrderFinishMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeOrderFinishMsgData `json:"data"`

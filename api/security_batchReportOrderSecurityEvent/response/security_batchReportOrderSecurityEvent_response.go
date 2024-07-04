@@ -1,5 +1,9 @@
 package security_batchReportOrderSecurityEvent_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SecurityBatchReportOrderSecurityEventResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SecurityBatchReportOrderSecurityEventData `json:"data"`

@@ -2,6 +2,8 @@ package rights_info_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/rights_info/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type RightsInfoRequest struct {

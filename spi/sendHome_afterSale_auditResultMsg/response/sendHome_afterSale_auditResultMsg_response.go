@@ -1,5 +1,9 @@
 package sendHome_afterSale_auditResultMsg_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SendHomeAfterSaleAuditResultMsgResponse struct {
 	doudian_sdk.BaseDoudianOpSpiResponse
 	Data *SendHomeAfterSaleAuditResultMsgData `json:"data"`

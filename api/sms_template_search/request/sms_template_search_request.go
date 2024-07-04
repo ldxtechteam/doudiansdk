@@ -2,6 +2,8 @@ package sms_template_search_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_template_search/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsTemplateSearchRequest struct {

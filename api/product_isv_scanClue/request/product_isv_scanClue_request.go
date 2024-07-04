@@ -2,6 +2,8 @@ package product_isv_scanClue_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/product_isv_scanClue/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type ProductIsvScanClueRequest struct {

@@ -2,6 +2,8 @@ package foodTakeout_order_getOrder_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/foodTakeout_order_getOrder/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type FoodTakeoutOrderGetOrderRequest struct {

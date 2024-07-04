@@ -1,5 +1,9 @@
 package foodTakeout_product_getProductList_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type FoodTakeoutProductGetProductListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *FoodTakeoutProductGetProductListData `json:"data"`

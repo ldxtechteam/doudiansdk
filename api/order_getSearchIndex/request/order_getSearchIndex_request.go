@@ -2,6 +2,8 @@ package order_getSearchIndex_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/order_getSearchIndex/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OrderGetSearchIndexRequest struct {

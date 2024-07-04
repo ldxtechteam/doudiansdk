@@ -2,6 +2,8 @@ package sendHome_product_batchUpdateStock_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_product_batchUpdateStock/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeProductBatchUpdateStockRequest struct {

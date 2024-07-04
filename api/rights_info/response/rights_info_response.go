@@ -1,5 +1,9 @@
 package rights_info_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type RightsInfoResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *RightsInfoData `json:"data"`

@@ -2,6 +2,8 @@ package openCloud_v1_imageVersion_create_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/openCloud_v1_imageVersion_create/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type OpenCloudV1ImageVersionCreateRequest struct {

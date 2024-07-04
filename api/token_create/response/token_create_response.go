@@ -1,5 +1,9 @@
 package token_create_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type TokenCreateResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *TokenCreateData `json:"data"`

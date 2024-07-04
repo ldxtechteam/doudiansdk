@@ -1,5 +1,9 @@
 package openCloud_v1_imageVersion_create_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OpenCloudV1ImageVersionCreateResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenCloudV1ImageVersionCreateData `json:"data"`

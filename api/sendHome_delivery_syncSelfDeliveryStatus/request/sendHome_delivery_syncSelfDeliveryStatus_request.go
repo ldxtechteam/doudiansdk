@@ -2,6 +2,8 @@ package sendHome_delivery_syncSelfDeliveryStatus_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_delivery_syncSelfDeliveryStatus/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeDeliverySyncSelfDeliveryStatusRequest struct {

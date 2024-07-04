@@ -1,5 +1,9 @@
 package open_getAuthInfo_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type OpenGetAuthInfoResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *OpenGetAuthInfoData `json:"data"`

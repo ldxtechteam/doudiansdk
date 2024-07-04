@@ -2,6 +2,8 @@ package sms_template_apply_list_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_template_apply_list/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsTemplateApplyListRequest struct {

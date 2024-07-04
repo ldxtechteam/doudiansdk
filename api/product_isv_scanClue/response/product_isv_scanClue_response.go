@@ -1,5 +1,9 @@
 package product_isv_scanClue_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type ProductIsvScanClueResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data []DataItem `json:"data"`

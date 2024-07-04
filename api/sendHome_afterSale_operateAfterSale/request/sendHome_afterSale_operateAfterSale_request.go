@@ -2,6 +2,8 @@ package sendHome_afterSale_operateAfterSale_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_afterSale_operateAfterSale/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeAfterSaleOperateAfterSaleRequest struct {

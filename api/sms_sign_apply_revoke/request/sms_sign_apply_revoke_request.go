@@ -2,6 +2,8 @@ package sms_sign_apply_revoke_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_sign_apply_revoke/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsSignApplyRevokeRequest struct {

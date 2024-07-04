@@ -1,5 +1,9 @@
 package sms_sign_apply_list_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsSignApplyListResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignApplyListData `json:"data"`

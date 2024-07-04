@@ -2,6 +2,8 @@ package sms_sign_apply_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sms_sign_apply/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SmsSignApplyRequest struct {

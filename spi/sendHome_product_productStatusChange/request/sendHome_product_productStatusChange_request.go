@@ -1,6 +1,8 @@
 package sendHome_product_productStatusChange_request
 
 import (
+	"github.com/ldxtechteam/doudiansdk/core"
+	"github.com/ldxtechteam/doudiansdk/spi/sendHome_product_productStatusChange/response"
 	"github.com/ldxtechteam/doudiansdk/utils"
 )
 

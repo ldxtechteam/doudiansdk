@@ -1,5 +1,9 @@
 package sms_sign_apply_revoke_response
 
+import (
+	"github.com/ldxtechteam/doudiansdk/core"
+)
+
 type SmsSignApplyRevokeResponse struct {
 	doudian_sdk.BaseDoudianOpApiResponse
 	Data *SmsSignApplyRevokeData `json:"data"`

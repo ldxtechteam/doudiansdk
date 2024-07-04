@@ -2,6 +2,8 @@ package sendHome_product_updateProductStatus_request
 
 import (
 	"encoding/json"
+	"github.com/ldxtechteam/doudiansdk/api/sendHome_product_updateProductStatus/response"
+	"github.com/ldxtechteam/doudiansdk/core"
 )
 
 type SendHomeProductUpdateProductStatusRequest struct {
